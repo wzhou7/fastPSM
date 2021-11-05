@@ -6,13 +6,17 @@ This package supports the testing of various difference-in-difference (DID) hypo
 
 To use this package, you will need the devtools library to install it from github. For example,
 
-> install.packages("devtools") # install devtools
-> library(devtools) # load devtools
-> install_github("wzhou7/tfDID") # install package from Github
+```
+install.packages("devtools") # install devtools
+library(devtools) # load devtools
+install_github("wzhou7/tfDID") # install package from Github
+```
 
 The above code needs to be run just once for any given computer. Then, you can load the package each time you are ready to use it:
 
-> library(tfDID) # load package
+```
+library(tfDID) # load package
+```
 
 Then follow our [example study](test_update/overview.md) to conduct your own PSM+DID study. 
 
