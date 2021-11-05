@@ -35,5 +35,13 @@ The T2 data, `data_T2`, should have variables \[`ID`, `Z1`, `Z2`, ..., `Zq`, `Y`
 * `Y` is the dependent variable at T2
 * `T` is the treatment indicator
 
-Then follow our [example study](test_update/overview.md) to conduct your own PSM+DID study. 
+Then, you may run the following function:
+
+```
+PSM_DID(data_T1, data_T2, "out_path/report_file_name")
+```
+
+which will produce a report in HTML format in your specified path.
+
+Follow our [example study](docs/example.md) for more details. 
 
