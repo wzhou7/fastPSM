@@ -22,10 +22,12 @@ library(tfDID) # load package
 
 In a typical DID setting, there are two time points, `T1` and `T2`, at which an observation is taken about given samples.
 The `tfDID` package requires two input data frames.  
+
 The T1 data should have \[`ID`, `X1`, `X2`, ..., `Xp`, `Y` \], where 
 * `ID` is the sample identifier;
 * `X1`, `X2`, ..., `Xp` are features observed at T1
 * `Y` is the dependent variable at T1
+
 The T2 data should have \[`ID`, `T`, `Y` \]
 * `ID` is the sample identifier;
 * `X1`, `X2`, ..., `Xp` are features observed at T1
