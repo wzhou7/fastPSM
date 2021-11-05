@@ -18,7 +18,7 @@ The above code needs to be run just once for any given computer. Then, you can l
 library(tfDID) # load package
 ```
 
-# How to Conduct Analysis?
+# How to Conduct Analysis with `tfDID`?
 
 In a typical DID setting, there are two time points, `T1` and `T2`, at which an observation is taken about given samples.
 The `tfDID` package requires two input data frames.  
