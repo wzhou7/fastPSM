@@ -1,8 +1,8 @@
 # What is `tfDID`?
 
-This package supports the testing of various difference-in-difference (DID) hypotheses based on an observed treatment variable. Due to self-selection bias, we include a propensity score matching (PSM) step. A unique aspect is that the treatment variables could be extracted from text.
+This package supports the testing of various text feature difference-in-difference (tfDID) analysis. 
 
-# How to Use This Package?
+# How to Install This Package?
 
 To use this package, you will need the devtools library to install it from github. For example,
 
@@ -17,6 +17,19 @@ The above code needs to be run just once for any given computer. Then, you can l
 ```
 library(tfDID) # load package
 ```
+
+# How to Conduct Analysis?
+
+In a typical DID setting, there are two time points, `T1` and `T2`, at which an observation is taken about given samples.
+The `tfDID` package requires two input data frames.  
+The T1 data should have \[`ID`, `X1`, `X2`, ..., `Xp`, `Y` \], where 
+* `ID` is the sample identifier;
+* `X1`, `X2`, ..., `Xp` are features observed at T1
+* `Y` is the dependent variable at T1
+The T2 data should have \[`ID`, `T`, `Y` \]
+* `ID` is the sample identifier;
+* `X1`, `X2`, ..., `Xp` are features observed at T1
+* `Y` is the dependent variable at T1
 
 Then follow our [example study](test_update/overview.md) to conduct your own PSM+DID study. 
 
