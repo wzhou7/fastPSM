@@ -1,5 +1,5 @@
-# testDID
-Testing various difference-in-difference hypotheses
+# tfDID
+Testing various difference-in-difference hypotheses by textual features.
 
 hjskgdd
 
