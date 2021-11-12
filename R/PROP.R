@@ -1,7 +1,7 @@
-PSM <- function(data_T1, id="AppID", target="Updated",
-                predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
-                method="wzhou4_logit_default",
-                report="report_file_name"){
+PROP <- function(data_T1, id="AppID", target="Updated",
+                 predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
+                 method="wzhou4_logit_default",
+                 report="report_file_name"){
     
     # select method to run
     
