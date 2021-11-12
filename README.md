@@ -23,13 +23,13 @@ library(tfDID) # load package
 
 In a typical DID setting, there are two time points, `T1` and `T2`, at which an observation is taken about given samples.
 
-First, you may conduct just the first stage model:
+First, you may conduct just the first stage model to predict the propensity:
 
 ```
-scores <- PSM(data_T1, id="AppID", target="Updated",
-          predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
-          method="wzhou4_logit_default",
-          report="report_file_name")
+scores <- PROP(data_T1, id="AppID", target="Updated",
+               predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
+               method="wzhou4_logit_default",
+               report="report_file_name")
 ```
 
 Or you may conduct just the second stage model:
