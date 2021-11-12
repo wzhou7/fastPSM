@@ -1,6 +1,6 @@
-Package: Fruved
+Package: tfDID
 Type: Package
-Title: Score Fruved Instruments
+Title: Term Features for Difference-in-Differences Analysis
 Version: 0.1.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
