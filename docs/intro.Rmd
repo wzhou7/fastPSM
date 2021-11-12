@@ -1,0 +1,33 @@
+---
+title: "Introduction to `tfDID`"
+output: html_document
+---
+
+First, load data
+
+```{r}
+df1 <- read.delim("../data/toydata_T1.txt")
+df2 <- read.delim("../data/toydata_T2.txt")
+```
+
+
+```{r}
+head(df1)
+```
+
+
+```{r}
+head(df2)
+```
+
+# Stage 1: PSM
+
+Using T1 predictors, predict treatment status between T1 and T2.
+
+```{r}
+Update 
+```
+
+
+# Stage 2: DID
+
