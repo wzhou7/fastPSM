@@ -4,12 +4,13 @@ This package supports the testing of various text feature difference-in-differen
 
 # How to Install This Package?
 
-To use this package, you will need the devtools library to install it from github. For example,
+To use this package, you will need the devtools library to install it from github. 
+When this repository is set as private, after setting up your credentials in RStudio, install this package as follows:
 
 ```
-install.packages("devtools") # install devtools
-library(devtools) # load devtools
-install_github("wzhou7/tfDID") # install package from Github
+library(gitcreds)
+library(devtools)
+install_github("wzhou7/tfDID", autho_token=gitcreds_get()$password) # install package from Github
 ```
 
 The above code needs to be run just once for any given computer. Then, you can load the package each time you are ready to use it:
