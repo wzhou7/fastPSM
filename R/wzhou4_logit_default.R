@@ -43,7 +43,7 @@ wzhou4_logit_default <- function(data_T1, id="AppID", target="Updated",
     form11 <- paste(target, "~", paste(c(required_vars,other_predictors), collapse = " + "), sep=" ")
     fit.lm11 <- glm(as.formula(form11), family = binomial(link = "logit"), data=df11)
     # summary(fit.lm00)
-    save(paste0(report,"_seg",i,".RData"), list("fit.lm11"))
+    save(file=paste0(report,"_seg",i,".RData"), list = c("fit.lm11"))
 
     # calculate and save probability to update
     df11$fitted_prob <- fitted(fit.lm11)
