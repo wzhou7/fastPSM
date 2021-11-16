@@ -14,13 +14,13 @@ PROP <- function(data_T1, id="AppID", target="Updated",
         scores <- mz_rpart(data_T1,id,target,predictors,report)
     }
 
-    if(method=="svm"){
-        scores <- mz_svm(data_T1,id,target,predictors,report)
-    }
+#    if(method=="svm"){
+#        scores <- mz_svm(data_T1,id,target,predictors,report)
+#    }
 
-    if(method=="automl"){
-        scores <- mz_automl(data_T1,id,target,predictors,report)
-    }
+#    if(method=="automl"){
+#        scores <- mz_automl(data_T1,id,target,predictors,report)
+#    }
 
     return(scores)
 }
