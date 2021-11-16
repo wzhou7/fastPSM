@@ -11,17 +11,14 @@ PROP <- function(data_T1, id="AppID", target="Updated",
     }
 
     if(method=="rpart"){
-        source("mz_rpart.R")
         scores <- mz_rpart(data_T1,id,target,predictors,report)
     }
 
     if(method=="svm"){
-        source("mz_svm.R")
         scores <- mz_svm(data_T1,id,target,predictors,report)
     }
 
     if(method=="automl"){
-        source("mz_automl.R")
         scores <- mz_automl(data_T1,id,target,predictors,report)
     }
 
