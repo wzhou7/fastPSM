@@ -39,7 +39,7 @@ wzhou4_logit_default <- function(data_T1, id="AppID", target="Updated",
 
     # df11 = apps that had a prior update and at least one rating at T1 (n=13,957)
     required_vars <- seg_vars[segs[i,]==1]
-    other_predictors <- setdiff(predictors, required_vars)
+    other_predictors <- setdiff(predictors, seg_vars)
     form11 <- paste(target, "~", paste(c(required_vars,other_predictors), collapse = " + "), sep=" ")
     fit.lm11 <- glm(as.formula(form11), family = binomial(link = "logit"), data=df11)
     # summary(fit.lm00)
