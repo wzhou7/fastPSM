@@ -7,7 +7,6 @@ PROP <- function(data_T1, id="AppID", target="Updated",
     # select method to run
 
     if(method=="wzhou4_logit_default"){
-        source("wzhou4_logit_default.R")
         scores <- wzhou4_logit_default(data_T1,id,target,predictors,report)
     }
 
