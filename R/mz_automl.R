@@ -31,6 +31,8 @@ mz_automl <- function(data_T1, id="AppID", target="Updated",
                    max_runtime_secs = 20
   )
   
+  save(aml, file = "aml.model")
+  
   # # AutoML Leaderboard
   # lb = aml@leaderboard
   
