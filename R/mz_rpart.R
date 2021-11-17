@@ -9,6 +9,7 @@ mz_rpart <- function(data_T1, id="AppID", target="Updated",
                  control = rpart::rpart.control(cp = my.cp), method = "class")
 
     # optionally, save model in a file
+    saveRDS(fit, "model.rds")
 
     # return required output
     data_T1$pred <- predict(fit, newdata = data_T1, type = "class")
