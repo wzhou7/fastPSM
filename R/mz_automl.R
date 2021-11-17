@@ -43,7 +43,7 @@ mz_automl <- function(data_T1, id="AppID", target="Updated",
   # return required output
   data_T1$pred <- prediction$predict
   data_T1$score <- prediction$TRUE.
-  df <- data_T1[,c("AppID","pred","score")]
+  scores <- data_T1[,c("AppID","pred","score")]
   
   # the return value should include [AppID, Updated, PropensityScore]
   # for each app in the input dataframe
