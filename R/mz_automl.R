@@ -4,9 +4,6 @@ mz_automl <- function(data_T1, id="AppID", target="Updated",
                       predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
                       report="aml.model"){
 
-  # initialize scored as all missing
-  scores <- rep(NA,NROW(data_T1))
-
   # ---- fit automl with default parameters ---- #
   train = data_T1[,c(id,target,predictors)]
 
