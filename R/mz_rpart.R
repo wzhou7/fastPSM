@@ -1,7 +1,7 @@
 #' @export
 mz_rpart <- function(data_T1, id="AppID", target="Updated",
                                  predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
-                                 report="report_file_name", my.cp=0.05){
+                                 report="rpart.model", my.cp=0.05){
 
     # fit model
     form11 <- paste(target, "~", paste(predictors, collapse = " + "), sep=" ")
@@ -9,7 +9,7 @@ mz_rpart <- function(data_T1, id="AppID", target="Updated",
                  control = rpart::rpart.control(cp = my.cp), method = "class")
 
     # optionally, save model in a file
-    save(file="rpart.model.RData", list = c("fit"))
+    save(file=paste0(report,".RData"), list = c("fit"))
 
     # return required output
     data_T1$pred <- predict(fit, newdata = data_T1, type = "class")
