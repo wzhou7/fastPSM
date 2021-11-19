@@ -34,8 +34,8 @@ mz_automl <- function(data_T1, id="AppID", target="Updated",
   # lb = aml@leaderboard
 
   # prediction result on test data
-  prediction <- h2o.predict(aml@leader, train_h) %>%
-    as.data.frame()
+  prediction <- h2o.predict(aml@leader, train_h)
+  prediction <- as.data.frame(prediction)
 
   # return required output
   data_T1$pred <- prediction$predict
