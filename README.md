@@ -1,6 +1,6 @@
-# What is `tfDID`?
+# What is `fastPSM`?
 
-This package supports the testing of various text feature difference-in-difference (tfDID) analysis. 
+Given a feature matrix `X` and the corresponding target variable `Y`, `fastPSM(X,Y)` attempts to automatically search for the best predictive model that will output for each case the propensity scores.
 
 # How to Install This Package?
 
@@ -10,46 +10,29 @@ When this repository is set as private, after setting up your credentials in RSt
 ```
 library(gitcreds)
 library(devtools)
-install_github("wzhou7/tfDID", auth_token=gitcreds_get()$password) # install package from Github
+install_github("wzhou7/fastPSM", auth_token=gitcreds_get()$password) # install package from Github
 ```
 
 The above code needs to be run just once for any given computer. Then, you can load the package each time you are ready to use it:
 
 ```
-library(tfDID) # load package
+library(fastPSM) # load package
 ```
 
-# How to Conduct Analysis with `tfDID`?
+# How to Conduct Analysis with `fastPSM`?
 
-In a typical DID setting, there are two time points, `T1` and `T2`, at which an observation is taken about given samples.
-
-First, you may conduct just the first stage model to predict the propensity:
+The following code will conduct all the training and model selection automatrically:
 
 ```
-scores <- PROP(data_T1, id="AppID", target="Updated",
-               predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
-               method="wzhou4_logit_default",
-               report="report_file_name")
+modeling_results <- fastPSM(X_train, Y_train)
 ```
 
-Or you may conduct just the second stage model:
+Then you can use the modeling output to do several things. For example
 
 ```
-DID(data_T1, data_T2, "out_path/report_file_name")
+Y_train_pred <- predict(modeling_results$best_model, X_train) # obtain propensity scores for training samples
+Y_test_pred <- predict(modeling_results$best_model, X_test) # obtain propensity scores for new samples
 ```
-
-You may run the following function:
-
-```
-PSM_DID(data_T1, data_T2, 
-        id="AppID",
-        dv="RateC_avg",
-        iv="Updated",
-        cvs=c(),
-        report="report_file_name")
-```
-
-which will produce a report in HTML format in your specified path.
 
 Follow our [example study](docs/example.md) for more details. 
 
