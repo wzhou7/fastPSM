@@ -1,6 +1,9 @@
 # What is `fastPSM`?
 
-Given a feature matrix `X` and the corresponding target variable `Y`, `fastPSM(X,Y)` attempts to automatically search for the best predictive model that will output for each case the propensity scores.
+Given a feature matrix `X` and the corresponding target variable `Y`, `fastPSM(X,Y)` attempts to automatically search for the best predictive model that will output for each case the propensity scores. Features are:
+* Can fit separate models for features with lots of missing values or constants
+* Will attempt a wide selection of base models
+* Automatic cross validate and select models
 
 # How to Install This Package?
 
