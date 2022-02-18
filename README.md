@@ -35,8 +35,11 @@ modeling_results <- fastPSM(Y, X0, X1, X2)
 Then you can use the modeling output to do several things. For example
 
 ```
-Y_train_pred <- predict(modeling_results$best_model, X_train) # obtain propensity scores for training samples
-Y_test_pred <- predict(modeling_results$best_model, X_test) # obtain propensity scores for new samples
+# obtain propensity scores for training samples
+Y_train_pred <- predict(modeling_results$best_model, X_train) 
+
+# obtain propensity scores for new samples
+Y_test_pred <- predict(modeling_results$best_model, X_test) 
 ```
 
 Follow our [example study](docs/example.md) for more details. 
