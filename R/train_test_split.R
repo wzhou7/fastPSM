@@ -1,4 +1,3 @@
-train_test_split <- function(df, train_ratio=0.7){
+train_test_split <- function(Y, X0, X1, X2, train_ratio=0.7){
 
 }
-
