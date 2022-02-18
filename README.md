@@ -1,6 +1,8 @@
 # What is `fastPSM`?
 
-Given a feature matrix `X` and the corresponding target variable `Y`, `fastPSM(X,Y)` attempts to automatically search for the best predictive model that will output for each case the propensity scores. Features are:
+Given a target variable `Y`, feature matrices `X0`, `X1`. and `X2`, `fastPSM(Y,X0,X1,X2)` attempts to automatically search for the best predictive model that will output for each case the propensity scores. 
+
+Features of the `fastPSM` package are:
 * Can fit separate models for features with lots of missing values or constants
 * Will attempt a wide selection of base models
 * Automatic cross validate and select models
@@ -27,7 +29,7 @@ library(fastPSM) # load package
 The following code will conduct all the training and model selection automatrically:
 
 ```
-modeling_results <- fastPSM(X_train, Y_train)
+modeling_results <- fastPSM(Y, X0, X1, X2)
 ```
 
 Then you can use the modeling output to do several things. For example
