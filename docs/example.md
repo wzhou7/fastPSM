@@ -28,10 +28,11 @@ The returned results include
 ## What `fastPSM` Does
 
 * First, all $n$ cases (identified by rows) are split into 4 subsets: `S00`, `S01`, `S10`, `S11` depending on availability of `X1` and `X2` features.
+  - impute the small number of missing values in `X1` and `X2` when applicable
 * Then, we attempt to fit a separate model per subset by going though the following process:
-  - 1. Split train test by default ratio of 80:20
-  - 2. With a chosen method, tune parameter by holdout validation. Currently, we implemented
+  - Split train test by default ratio of 80:20
+  - With a chosen method, tune parameter by holdout validation. Currently, we implemented
   (1) Single rpart;
   (2) Hybrid rpart;
   (3) Hybrid Logistic.
-  - 3. Return the final model with chosen parameter
+  - Return the final model with chosen parameter
