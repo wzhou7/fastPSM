@@ -1,1 +1,21 @@
+mz_rpart_partition <- function(partition, id="AppID", target="Updated",
+                     predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
+                     report="report_file_name", my.cp=0.05){
 
+  # fit model
+  form11 <- paste(target, "~", paste(predictors, collapse = " + "), sep=" ")
+  fit <- rpart::rpart(as.formula(form11), data = TRAIN,
+                      control = rpart::rpart.control(cp = my.cp), method = "class")
+
+  # optionally, save model in a file
+  save(fit, file = "rpart.model")
+
+  # return required output
+  TRAIN$pred <- predict(fit, newdata = HOLDOUT, type = "class")
+  TRAIN$score <- predict(fit, newdata = HOLDOUT, type = "prob")[,"TRUE"]
+  df <- data_T1[,c(id,"pred","score")]
+
+  # the return value should include [AppID, Updated, PropensityScore]
+  # for each app in the input dataframe
+  return(df)
+}
