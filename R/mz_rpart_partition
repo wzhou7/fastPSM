@@ -3,6 +3,15 @@ mz_rpart_partition <- function(partition, id="AppID", target="Updated",
                      predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
                      report="report_file_name", my.cp=0.05){
 
+  # fit model on each partition
+  m11 <- wz_rpart(df11, predictors=c(X0,X1,X2))
+  m10 <- wz_rpart(df10, predictors=c(X0,X1))
+  m01 <- wz_rpart(df01, predictors=c(X0,X2))
+  m00 <- wz_rpart(df00, predictors=X0)
+
+  # 
+
+
   # fit model
   form11 <- paste(target, "~", paste(predictors, collapse = " + "), sep=" ")
   fit <- rpart::rpart(as.formula(form11), data = TRAIN,
