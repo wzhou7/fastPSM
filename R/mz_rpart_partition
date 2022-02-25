@@ -1,3 +1,4 @@
+#' @export
 mz_rpart_partition <- function(partition, id="AppID", target="Updated",
                      predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
                      report="report_file_name", my.cp=0.05){
