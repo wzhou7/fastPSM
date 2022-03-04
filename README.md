@@ -1,10 +1,9 @@
 # What is `fastPSM`?
 
-Given a target variable `Y`, feature matrices `X0`, `X1`. and `X2`, `fastPSM(Y,X0,X1,X2)` attempts to automatically search for the best predictive model that will output for each case the propensity scores. 
+Given a binary classfication problem, `fastPSM` attempts to automatically search for the best predictive model that will output for each case the propensity scores. 
 
 Features of the `fastPSM` package are:
-* Can fit separate models for features with lots of missing values or constants
-* Will attempt a wide selection of base models
+* Will attempt a wide selection of base models: logistic regression, rpart, svm, naive Bayes, and auto-ml
 * Automatic cross validate and select models
 
 # How to Install This Package?
@@ -29,17 +28,17 @@ library(fastPSM) # load package
 The following code will conduct all the training and model selection automatrically:
 
 ```
-modeling_results <- fastPSM(Y, X0, X1, X2)
+results <- fastPSM(Y~., data=df)
 ```
 
 Then you can use the modeling output to do several things. For example
 
 ```
 # obtain propensity scores for training samples
-Y_train_pred <- predict(modeling_results$best_model, X_train) 
+Y_train_pred <- predict(results$best_model, X_train) 
 
 # obtain propensity scores for new samples
-Y_test_pred <- predict(modeling_results$best_model, X_test) 
+Y_test_pred <- predict(results$best_model, X_test) 
 ```
 
 Follow our [example study](docs/example.md) for more details. 
