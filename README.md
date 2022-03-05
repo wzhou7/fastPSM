@@ -14,7 +14,7 @@ When this repository is set as private, after setting up your credentials in RSt
 ```
 library(gitcreds)
 library(devtools)
-install_github("wzhou7/fastPSM", auth_token=gitcreds_get()$password) # install package from Github
+install_github("wzhou7/fastPSM") # install package from Github
 ```
 
 The above code needs to be run just once for any given computer. Then, you can load the package each time you are ready to use it:
