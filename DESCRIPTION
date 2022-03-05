@@ -1,5 +1,5 @@
 Package: fastPSM
-Title: What the Package Does (One Line, Title Case)
+Title: Propensity Score Modeling from Binary Classifiers
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
