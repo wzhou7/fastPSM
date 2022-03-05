@@ -3,7 +3,7 @@
 Given a binary classfication problem, `fastPSM` attempts to automatically search for the best predictive model that will output for each case the propensity scores. 
 
 Features of the `fastPSM` package are:
-* Will attempt a wide selection of base models: logistic regression, rpart, svm, naive Bayes, and auto-ml
+* Will attempt a wide selection of base models: logistic regression, classification trees, support vector machines, naive Bayes, artificial neural networks, and auto-ml
 * Automatic cross validate and select models
 
 # How to Install This Package?
