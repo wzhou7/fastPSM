@@ -8,11 +8,9 @@ Features of the `fastPSM` package are:
 
 # How to Install This Package?
 
-To use this package, you will need the devtools library to install it from github. 
-When this repository is set as private, after setting up your credentials in RStudio, install this package as follows:
+To use this package, you will need the devtools library to install it from github:
 
 ```
-library(gitcreds)
 library(devtools)
 install_github("wzhou7/fastPSM") # install package from Github
 ```
