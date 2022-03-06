@@ -1,7 +1,5 @@
 #' @export
-wzhou4_logit_default <- function(data_T1, id="AppID", target="Updated",
-                                 predictors=c("Subcategory_new", "IsFree", "DaysSinceUpdate"),
-                                 report="report_file_name", miss_cut=0.05){
+PSM_logit <- function(formula, data){
 
   # Since regression models do not handle missing values well, yet we need a prediction for every record,
   # we use some heuristics to manage missing values.
